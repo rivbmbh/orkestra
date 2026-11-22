@@ -2,7 +2,7 @@
 import { createContext, useContext, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Bot, Columns3 } from "lucide-react";
+import { LayoutDashboard, Bot, Columns3, FlaskConical } from "lucide-react";
 import { workspaces } from "@/lib/data";
 
 const Ctx = createContext(null);
@@ -12,6 +12,7 @@ const nav = [
   { href: "/", label: "Ringkasan", icon: LayoutDashboard },
   { href: "/agents", label: "Agent", icon: Bot },
   { href: "/pipeline", label: "Alur kerja", icon: Columns3 },
+  { href: "/playground", label: "Uji agent", icon: FlaskConical },
 ];
 
 export default function Shell({ children }) {
@@ -39,7 +40,7 @@ export default function Shell({ children }) {
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block text-xs text-white/50">Tahap 1: tampilan dengan data contoh</div>
+          <div className="hidden md:block text-xs text-white/50">Tahap 2: agent terhubung ke Gemini</div>
         </aside>
         <main className="flex-1 p-5 md:p-8 min-w-0">{children}</main>
       </div>
